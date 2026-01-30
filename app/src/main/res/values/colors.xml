@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="tranf">#00868686</color>
+    <color name="app_color">#6B1B10</color>
+    <color name="orange">#FB6920</color>
+    <color name="green">#4CAF50</color>
+    <color name="blue">#039BE5</color>
+    <color name="brown">#5E2006</color>
+    <color name="color_bg_appcolor">#EFC68E</color>
+    <color name="color_bg_gray">#E6E6E6</color>
+
+
+
+
+    <color name="native_bg_ad">#6618231A</color>
+    <color name="native_bg_btn">#6B1B10</color>
+    <color name="native_btn_bg">#6B1B10</color>
+    <color name="native_collap_btn_bg">#6B1B10</color>
+    <color name="color_app">#6B1B10</color>
+    <color name="native_bg">#6618231A</color>
+    <color name="native_bg_hide">#6618231A</color>
+    <color name="colorPrimary">#8E5037</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="native_text_color_btn">#FFFFFF</color>
+    <color name="native_text_color">#FFFFFF</color>
+
+    <color name="native_btn_text_dialog_color">#FFFFFF</color>
+    <color name="native_text_dialog_color">#FF000000</color>
+    <color name="native_bg_dialog_color">#FFFFFF</color>
+
+    <color name="native_text_title">#FFFFFF</color>
+    <color name="native_text_body">#FFFFFF</color>
+    <color name="native_bg_cl">#FFFFFF</color>
+    <color name="purple_F0">#F091F5</color>
+</resources>

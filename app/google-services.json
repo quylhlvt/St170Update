@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "981871006906",
+    "project_id": "st170-dragontribeocmaker",
+    "storage_bucket": "st170-dragontribeocmaker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981871006906:android:4964f0632ad2c9c2765e83",
+        "android_client_info": {
+          "package_name": "com.dragon.tribe.fire.oc.maker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2lLZrx_Y6fcsVERQEODnZm8IXS378c10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
