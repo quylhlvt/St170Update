@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dragon.tribe.fire.oc.maker"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
     <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32"
-        tools:ignore="ScopedStorage" />
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <queries>
+        <!-- Telegram -->
+        <package android:name="org.telegram.messenger" />
+        <package android:name="org.telegram.messenger.web" />
+        <package android:name="org.thunderdog.challegram" />
+
+        <!-- WhatsApp -->
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
+
+        <!-- Intent filters for sharing -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="image/*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND_MULTIPLE" />
+            <data android:mimeType="image/*" />
+        </intent>
+    </queries>
+
     <application
-        android:name=".ui.App"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/Theme.DragonTribeOCMaker"
-        android:usesCleartextTraffic="true"
-        android:networkSecurityConfig="@xml/network_security_config"
+        android:name="com.ocmaker.fullbody.creator.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:supportsRtl="true">
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        tools:replace="android:fullBackupContent"
+        android:theme="@style/Theme.ST195">
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.NATIVE_AD_DEBUGGER_ENABLED"
+            android:value="false" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id" />
@@ -40,21 +55,9 @@
             android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
             android:value="true" />
         <activity
-            android:name=".ui.setting.SettingActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.ViewActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.success.SuccessActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.splash.SplashActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -62,47 +65,70 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.permission.PermissionActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.language.LanguageActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.mycreation.MycreationActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.permision.PermissionActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.lissticker.ListStickerActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.tutorial.TutorialActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.language.LanguageActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.my_creation.MyCreationActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.itemsticker.ItemStickerActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.succes.SuccessActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.intro.IntroActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.view.ViewActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.HomeActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.main.MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.customize.CustomizeActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.setting.SettingActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.category.CategoryActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.category.CategoryActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.background1.BackgroundActivity"
+            android:name="com.ocmaker.fullbody.creator.ui.customview.CustomviewActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ocmaker.fullbody.creator.ui.quick_mix.QuickMixActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ocmaker.fullbody.creator.ui.background.BackgroundActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+        <provider
+            android:name="com.ocmaker.fullbody.creator.utils.share.whatsapp.StickerContentProvider"
+            android:authorities="com.ocmaker.fullbody.creator.utils.share.whatsapp.StickerContentProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.whatsapp.sticker.READ" />
         <service
-            android:name=".core.service.firebase.MyFirebaseMessagingService"
+            android:name="com.ocmaker.fullbody.creator.service.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

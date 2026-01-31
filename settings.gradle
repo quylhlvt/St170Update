@@ -7,6 +7,8 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        mavenCentral()
+        gradlePluginPortal()
         maven { url 'https://jitpack.io' }
         maven {
             url 'https://android-sdk.is.com/'
@@ -17,14 +19,13 @@ pluginManagement {
         maven {
             url 'https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea'
         }
-        jcenter()
-        mavenCentral()
-        gradlePluginPortal()
     }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        google()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
         maven {
             url 'https://android-sdk.is.com/'
@@ -35,11 +36,8 @@ dependencyResolutionManagement {
         maven {
             url 'https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea'
         }
-        jcenter()
-        google()
-        mavenCentral()
     }
 }
 
-rootProject.name = "OC Maker Dragon Avatar"
+rootProject.name = "OC Maker Full Body Character"
 include ':app'

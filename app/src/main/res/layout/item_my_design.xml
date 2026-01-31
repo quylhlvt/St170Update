@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="0dp"
+            android:background="@color/transparent"
+            android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="8dp"
+            >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:strokeColor="@color/white"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <!--            imvImage-->
+                <ImageView
+                    android:id="@+id/imvImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_per" />
+
+                <ImageView
+                    android:id="@+id/btnDelete"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="end"
+                    android:layout_margin="18dp"
+                    android:src="@drawable/imv_delete" />
+
+                <!--        btnSelect-->
+                <ImageView
+                    android:id="@+id/btnSelect"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="end"
+                    android:layout_margin="18dp"
+                    android:src="@drawable/imv_check_false"
+                    android:visibility="gone" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+</layout>

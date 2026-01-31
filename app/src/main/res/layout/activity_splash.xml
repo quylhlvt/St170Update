@@ -1,69 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_language"
-    tools:context=".ui.splash.SplashActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        app:layout_constraintDimensionRatio="2.7:1.12"
-        android:id="@+id/imgImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="45dp"
-        android:layout_marginTop="92dp"
-        android:src="@drawable/img_title_splash"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_language"
+        android:layout_height="match_parent">
+        <ImageView
+            app:layout_constraintDimensionRatio="2.7:1.12"
+            android:id="@+id/imgImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginTop="92dp"
+            android:src="@drawable/img_title_splash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="31dp"
-        android:src="@drawable/img_splash"
-        app:layout_constraintBottom_toTopOf="@+id/lottie_typing"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgImage" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="31dp"
+            android:src="@drawable/img_splash"
+            app:layout_constraintBottom_toTopOf="@+id/lottie_typing"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgImage" />
 
 
-    <TextView
-        android:id="@+id/tvDes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/tvDes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
 
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="@font/montserrat_italic"
-        android:gravity="center"
-        android:text="@string/this_action_can_contain_ads"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/montserrat_italic"
+            android:gravity="center"
+            android:text="@string/this_action_may_contain_advertising"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Loading -->
+        <!-- Loading -->
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie_typing"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:background="@color/tranf"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvDes"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/lottie"
-        app:lottie_repeatMode="restart" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_typing"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@color/transparent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvDes"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/lottie"
+            app:lottie_repeatMode="restart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
