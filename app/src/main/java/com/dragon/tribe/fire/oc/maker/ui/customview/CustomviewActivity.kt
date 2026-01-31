@@ -104,10 +104,10 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
                 adapterColor.setPos(arrInt[0][1])
                 if (listData[adapterNav.posNav].listPath.size == 1) {
                     binding.llColor.visibility = View.INVISIBLE
-                    binding.imvShowColor.visibility = View.INVISIBLE
+//                    binding.imvShowColor.visibility = View.INVISIBLE
                 } else {
                     binding.llColor.visibility = View.VISIBLE
-                    binding.imvShowColor.visibility = View.VISIBLE
+//                    binding.imvShowColor.visibility = View.VISIBLE
                     adapterColor.submitList(listData[adapterNav.posNav].listPath)
                 }
                 adapterPart.setPos(arrInt[0][0])
@@ -261,14 +261,14 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
 
                 if (listData[adapterNav.posNav].listPath.size == 1) {
                     binding.llColor.visibility = View.INVISIBLE
-                    binding.imvShowColor.visibility = View.INVISIBLE
+//                    binding.imvShowColor.visibility = View.INVISIBLE
                 } else {
                     if (arrShowColor[adapterNav.posNav]) {
                         binding.llColor.show()
                     } else {
                         binding.llColor.inhide()
                     }
-                    binding.imvShowColor.visibility = View.VISIBLE
+//                    binding.imvShowColor.visibility = View.VISIBLE
                     adapterColor.submitList(listData[it].listPath)
                     binding.root.postDelayed(
                         { binding.rcvColor.smoothScrollToPosition(arrInt[it][1]) },
@@ -362,14 +362,7 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
             }
         }
         binding.apply {
-            imvShowColor.onSingleClick {
-                arrShowColor[adapterNav.posNav] = !arrShowColor[adapterNav.posNav]
-                if (arrShowColor[adapterNav.posNav]) {
-                    llColor.show()
-                } else {
-                    llColor.inhide()
-                }
-            }
+
             btnReset.onSingleClick {
                 if(!DataHelper.arrBlackCentered[blackCentered].checkDataOnline || isInternetAvailable(
                         this@CustomviewActivity
@@ -395,11 +388,11 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
                     adapterPart.submitList(listData[adapterNav.posNav].listPath[adapterColor.posColor].listPath)
                     if (listData[adapterNav.posNav].listPath.size == 1) {
                         binding.llColor.visibility = View.INVISIBLE
-                        binding.imvShowColor.visibility = View.INVISIBLE
+//                        binding.imvShowColor.visibility = View.INVISIBLE
                     } else {
                         if (!checkHide) {
                             binding.llColor.visibility = View.VISIBLE
-                            binding.imvShowColor.visibility = View.VISIBLE
+//                            binding.imvShowColor.visibility = View.VISIBLE
                             adapterColor.submitList(listData[adapterNav.posNav].listPath)
                         }
                     }
@@ -427,18 +420,18 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
                 }
                 dialog.show()
             }
-            btnRevert.onSingleClick {
-                checkRevert = !checkRevert
-                if (checkRevert) {
-                    listImg.forEach {
-                        it.scaleX = 1f
-                    }
-                } else {
-                    listImg.forEach {
-                        it.scaleX = -1f
-                    }
-                }
-            }
+//            btnRevert.onSingleClick {
+//                checkRevert = !checkRevert
+//                if (checkRevert) {
+//                    listImg.forEach {
+//                        it.scaleX = 1f
+//                    }
+//                } else {
+//                    listImg.forEach {
+//                        it.scaleX = -1f
+//                    }
+//                }
+//            }
             btnDice.onSingleClick {
                 if (!DataHelper.arrBlackCentered[blackCentered].checkDataOnline || isInternetAvailable(
                         this@CustomviewActivity
@@ -487,7 +480,7 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
                     showInter {
                     if (listData[adapterNav.posNav].listPath.size == 1) {
                         binding.llColor.visibility = View.INVISIBLE
-                        binding.imvShowColor.visibility = View.INVISIBLE
+//                        binding.imvShowColor.visibility = View.INVISIBLE
                     } else {
                         if (!checkHide) {
 //                                if (arrShowColor[adapterNav.posNav]) {
@@ -497,7 +490,7 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
 //                                }
                             arrShowColor[adapterNav.posNav] = true
                             binding.llColor.visibility = View.VISIBLE
-                            binding.imvShowColor.visibility = View.VISIBLE
+//                            binding.imvShowColor.visibility = View.VISIBLE
                             adapterColor.submitList(listData[adapterNav.posNav].listPath)
                         }
                     }

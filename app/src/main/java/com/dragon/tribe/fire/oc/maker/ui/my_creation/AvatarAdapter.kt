@@ -11,6 +11,7 @@ import com.dragon.tribe.fire.oc.maker.utils.show
 import com.facebook.shimmer.ShimmerDrawable
 import com.dragon.tribe.fire.oc.maker.R
 import com.dragon.tribe.fire.oc.maker.databinding.ItemMyAvatarBinding
+import com.dragon.tribe.fire.oc.maker.utils.SystemUtils.loadImageFromFile
 
 class AvatarAdapter :
     AbsBaseAdapter<String, ItemMyAvatarBinding>(R.layout.item_my_avatar, DiffCallBack()) {
@@ -26,8 +27,8 @@ class AvatarAdapter :
         val shimmerDrawable = ShimmerDrawable().apply {
             setShimmer(shimmer)
         }
-        Glide.with(binding.root).load(data).placeholder(shimmerDrawable)
-           .into(binding.imvImage)
+        binding.imvImage.loadImageFromFile(data)
+
         binding.imvImage.onSingleClick {
             onClick?.invoke(position, "item")
         }

@@ -1,11 +1,16 @@
 package com.dragon.tribe.fire.oc.maker.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Configuration
 import android.graphics.LinearGradient
 import android.graphics.Shader
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.ColorInt
+import com.bumptech.glide.Glide
+import com.bumptech.glide.signature.ObjectKey
+import java.io.File
 import java.util.Locale
 
 object SystemUtils {
@@ -28,6 +33,16 @@ object SystemUtils {
             )
             invalidate()
         }
+    }
+    @SuppressLint("CheckResult")
+    fun ImageView.loadImageFromFile(path: String) {
+        val file = File(path)
+        val request = Glide.with(context)
+            .load(file)
+
+        request.signature(ObjectKey(file.lastModified()))
+
+        request.into(this)
     }
     fun TextView.gradientHorizontal(
         @ColorInt startColor: Int,

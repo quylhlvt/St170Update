@@ -16,6 +16,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.signature.ObjectKey
 import com.dragon.tribe.fire.oc.maker.base.AbsBaseActivity
 import com.dragon.tribe.fire.oc.maker.custom.Draw
 import com.dragon.tribe.fire.oc.maker.custom.DrawView
@@ -57,7 +58,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.File
 import javax.inject.Inject
+import kotlin.text.get
 
 @AndroidEntryPoint
 class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
@@ -212,12 +215,19 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
         path: String, isCharacter: Boolean = false, bitmapText: Bitmap? = null
     ) {
         lifecycleScope.launch(Dispatchers.IO) {
-            val bitmapDefault =
+            val bitmapDefault = if (isCharacter){Glide.with(this@BackgroundActivity).load(path).signature(
+                ObjectKey(
+                    File(
+                        path
+                    ).lastModified()
+                )
+            ).submit().get().toBitmap()}else{
                 bitmapText
                     ?: Glide.with(this@BackgroundActivity).load(path).override(512, 512)
                         .encodeQuality(50)
                         .diskCacheStrategy(DiskCacheStrategy.RESOURCE).submit()
                         .get().toBitmap()
+            }
             val drawableEmoji =
                 viewModel.loadDrawableEmoji(this@BackgroundActivity, bitmapDefault, isCharacter)
 

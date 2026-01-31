@@ -43,7 +43,7 @@
 
             <TextView
                 android:id="@+id/txtNext"
-                style="@style/custom_text"
+                style="@style/single_marquee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -61,16 +61,16 @@
                 android:textColor="@color/app_color"
                 android:textSize="16sp" />
         </FrameLayout>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btnSave"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_next"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toBottomOf="@id/imvBack"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/imvBack" />
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/btnSave"-->
+<!--            android:layout_width="32dp"-->
+<!--            android:layout_height="32dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:src="@drawable/ic_next"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/imvBack"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@id/imvBack" />-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -171,31 +171,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/llColor" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imvShowColor"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:elevation="1dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="2dp"
-            android:src="@drawable/imv_color"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rl" />
+
 
         <LinearLayout
             android:elevation="1dp"
             android:id="@+id/llColor"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="10dp"
             android:gravity="start"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@id/imvShowColor"
+            app:layout_constraintTop_toBottomOf="@+id/rl"
             app:layout_constraintEnd_toStartOf="@id/btnDice"
-            app:layout_constraintStart_toEndOf="@id/imvShowColor"
-            app:layout_constraintTop_toTopOf="@id/imvShowColor">
+            app:layout_constraintStart_toStartOf="parent"
+          >
 
             <FrameLayout
                 android:layout_width="wrap_content"
