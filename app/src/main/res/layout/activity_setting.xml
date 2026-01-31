@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <com.ocmaker.fullbody.creator.utils.StrokeAppCompatTextView
+        <com.dragon.tribe.fire.oc.maker.utils.StrokeAppCompatTextView
             android:id="@+id/titleSetting"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

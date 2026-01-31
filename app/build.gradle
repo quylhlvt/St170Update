@@ -10,16 +10,16 @@ plugins {
 }
 
 android {
-    namespace 'com.ocmaker.fullbody.creator'
+    namespace 'com.dragon.tribe.fire.oc.maker'
     compileSdk 36
     defaultConfig {
-        applicationId "com.ocmaker.fullbody.creator"
+        applicationId "com.dragon.tribe.fire.oc.maker"
         minSdk 24
         targetSdk 36
         versionCode 3
         versionName "1.0.2"
         def formattedDate = new Date().format('MM.dd.yyyy')
-        archivesBaseName = "OC_Maker_Full_Body_Character_${versionName}_${formattedDate}"
+        archivesBaseName = "ST170_Dragon_Tribe_OC_Maker_v${versionName}_${formattedDate}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

@@ -1,4 +1,4 @@
-package com.ocmaker.fullbody.creator
+package com.dragon.tribe.fire.oc.maker
 
 import org.junit.Assert
 import org.junit.Test

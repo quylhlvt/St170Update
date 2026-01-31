@@ -1,4 +1,4 @@
-package com.ocmaker.fullbody.creator
+package com.dragon.tribe.fire.oc.maker
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.ocmaker.fullbody.creator", appContext.packageName)
+        assertEquals("com.dragon.tribe.fire.oc.maker", appContext.packageName)
     }
 }

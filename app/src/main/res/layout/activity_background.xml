@@ -68,7 +68,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <com.ocmaker.fullbody.creator.custom.DrawView
+        <com.dragon.tribe.fire.oc.maker.custom.DrawView
             android:id="@+id/drawView"
             android:layout_marginTop="10dp"
             android:layout_width="0dp"
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
-        </com.ocmaker.fullbody.creator.custom.DrawView>
+        </com.dragon.tribe.fire.oc.maker.custom.DrawView>
         <ImageView
             android:id="@+id/navBottom"
             android:layout_width="match_parent"

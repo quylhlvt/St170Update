@@ -7,7 +7,7 @@
 
         <variable
             name="mTutorialModel"
-            type="com.ocmaker.fullbody.creator.data.model.TutorialModel" />
+            type="com.dragon.tribe.fire.oc.maker.data.model.TutorialModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

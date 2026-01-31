@@ -22,8 +22,8 @@
 
 
 -keep public class com.google.android.gms.** { public protected *; }
--keep class com.ocmaker.fullbody.creator.ui.splash.** { *; }
--keep class com.ocmaker.fullbody.creator.data.model.** { *; }
+-keep class com.dragon.tribe.fire.oc.maker.ui.splash.** { *; }
+-keep class com.dragon.tribe.fire.oc.maker.data.model.** { *; }
 
 -dontwarn org.bouncycastle.jsse.BCSSLParameters
 -dontwarn org.bouncycastle.jsse.BCSSLSocket

@@ -6,7 +6,7 @@
 
         <variable
             name="languageModel"
-            type="com.ocmaker.fullbody.creator.data.model.LanguageModel" />
+            type="com.dragon.tribe.fire.oc.maker.data.model.LanguageModel" />
     </data>
 
 

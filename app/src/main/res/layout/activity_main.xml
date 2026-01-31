@@ -82,7 +82,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
 
-                    <com.ocmaker.fullbody.creator.utils.StrokeAppCompatTextView
+                    <com.dragon.tribe.fire.oc.maker.utils.StrokeAppCompatTextView
                         android:id="@+id/txtCreate1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.ocmaker.fullbody.creator.utils.StrokeAppCompatTextView
+                    <com.dragon.tribe.fire.oc.maker.utils.StrokeAppCompatTextView
                         android:id="@+id/txtSticker1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
                     android:overScrollMode="never"
                     android:paddingTop="8dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_list_sugesst" />
+                    tools:listitem="@layout/item_mix" />
 
 
             </LinearLayout>
