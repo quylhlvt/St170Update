@@ -47,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginHorizontal="16dp"
-                    android:background="@drawable/bg_12_color"
+                    android:background="@drawable/bg_16_solid_brown_stroke_brown"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rl3">
 
@@ -59,10 +59,10 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/nunito_semi_bold"
+                        android:fontFamily="@font/londrina_solid_regular"
                         android:gravity="center"
                         android:text="@string/storage"
-                        android:textColor="@color/white"
+                        android:textColor="@color/app_color"
                         android:textSize="16sp" />
 
                     <androidx.appcompat.widget.AppCompatImageView
@@ -83,7 +83,7 @@
                     android:layout_height="60dp"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_12_color"
+                    android:background="@drawable/bg_16_solid_brown_stroke_brown"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rl3">
 
@@ -95,10 +95,10 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/nunito_semi_bold"
+                        android:fontFamily="@font/londrina_solid_regular"
                         android:gravity="center"
                         android:text="@string/notifications"
-                        android:textColor="@color/white"
+                        android:textColor="@color/app_color"
                         android:textSize="16sp" />
 
                     <androidx.appcompat.widget.AppCompatImageView
@@ -119,6 +119,7 @@
             android:layout_width="200dp"
             android:layout_height="0dp"
             android:src="@drawable/img_per"
+            android:layout_marginTop="50dp"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintBottom_toTopOf="@+id/native_ads"
             app:layout_constraintEnd_toEndOf="parent"

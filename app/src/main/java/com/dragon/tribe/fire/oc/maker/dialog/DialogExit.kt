@@ -18,10 +18,6 @@ class DialogExit(context: Activity, var type: String,var bg:Int?=1) :
     override fun getContentView(): Int = R.layout.dialog_exit
 
     override fun initView() {
-        binding.txtContent.gradientHorizontal(
-            "#01579B".toColorInt(),
-            "#2686C6".toColorInt())
-        binding.txtTitle.setTextColor(ContextCompat.getColor(context,R.color.white))
 
         when(type){
             "exit" ->{
@@ -43,9 +39,7 @@ class DialogExit(context: Activity, var type: String,var bg:Int?=1) :
                 binding.btnYes.hide()
                 binding.btnNo.hide()
                 binding.btnOk.show()
-                binding.txtContent.hide()
-                binding.txtContent1.show()
-                binding.txtContent1.text = context.getString(R.string.please_check_your_network_connection)
+                binding.txtContent.text = context.getString(R.string.please_check_your_network_connection)
             }
             "loadingnetwork"->{
                 binding.txtTitle.text =
@@ -54,9 +48,7 @@ class DialogExit(context: Activity, var type: String,var bg:Int?=1) :
                 binding.btnYes.hide()
                 binding.btnNo.hide()
                 binding.btnOk.show()
-                binding.txtContent.hide()
-                binding.txtContent1.show()
-                binding.txtContent1.text = context.getString(R.string.please_check_your_network_connection)
+                binding.txtContent.text = context.getString(R.string.please_check_your_network_connection)
             }
             "reset"->{
                 binding.txtTitle.text = context.getString(R.string.reset)
@@ -74,9 +66,7 @@ class DialogExit(context: Activity, var type: String,var bg:Int?=1) :
                 binding.btnOk.show()
                 binding.txtTitle.text = context.getString(R.string.data)
                 binding.txtTitle.isSelected = true
-                binding.txtContent.hide()
-                binding.txtContent1.show()
-                binding.txtContent1.text = context.getString(R.string.please_wait_a_few_seconds_for_data_to_load)
+                binding.txtContent.text = context.getString(R.string.please_wait_a_few_seconds_for_data_to_load)
             }
             "awaitdataHome"->{
                 binding.btnYes.hide()
@@ -84,9 +74,7 @@ class DialogExit(context: Activity, var type: String,var bg:Int?=1) :
                 binding.btnOk.show()
                 binding.txtTitle.text = context.getString(R.string.no_internet)
                 binding.txtTitle.isSelected = true
-                binding.txtContent.hide()
-                binding.txtContent1.show()
-                binding.txtContent1.text = context.getString(R.string.please_connect_to_the_internet_to_download_more_data)
+                binding.txtContent.text = context.getString(R.string.please_connect_to_the_internet_to_download_more_data)
             }
         }
     }

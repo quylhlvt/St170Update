@@ -15,20 +15,21 @@
             android:id="@+id/appCompatImageView3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
             android:elevation="-1dp"
+            android:scaleType="fitXY"
             android:src="@drawable/img_bg_custom" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imvBack"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:elevation="1dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="50dp"
+            android:elevation="1dp"
             android:src="@drawable/ic_back_app"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <FrameLayout
             android:id="@+id/btnSave"
             android:layout_width="48dp"
@@ -36,10 +37,10 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/img_bg_save"
             app:layout_constraintBottom_toBottomOf="@id/imvBack"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/imvBack"
-            android:background="@drawable/img_bg_save">
+            app:layout_constraintTop_toTopOf="@id/imvBack">
 
             <TextView
                 android:id="@+id/txtNext"
@@ -48,35 +49,36 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="3dp"
-                android:fontFamily="@font/londrina_solid_regular"
-                android:gravity="center"
-                android:text="@string/next"
-                android:singleLine="true"
                 android:ellipsize="marquee"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:scrollHorizontally="true"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
+                android:fontFamily="@font/londrina_solid_regular"
                 android:freezesText="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/next"
                 android:textColor="@color/app_color"
                 android:textSize="16sp" />
         </FrameLayout>
-<!--        <androidx.appcompat.widget.AppCompatImageView-->
-<!--            android:id="@+id/btnSave"-->
-<!--            android:layout_width="32dp"-->
-<!--            android:layout_height="32dp"-->
-<!--            android:layout_marginEnd="16dp"-->
-<!--            android:src="@drawable/ic_next"-->
-<!--            android:adjustViewBounds="true"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/imvBack"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@id/imvBack" />-->
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/btnSave"-->
+        <!--            android:layout_width="32dp"-->
+        <!--            android:layout_height="32dp"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            android:src="@drawable/ic_next"-->
+        <!--            android:adjustViewBounds="true"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/imvBack"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/imvBack" />-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/bg_white_cus_item"
+            android:elevation="2dp"
             android:orientation="vertical"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -96,58 +98,58 @@
                 android:src="@drawable/ic_flip" />
         </LinearLayout>
 
-<!--        <androidx.appcompat.widget.AppCompatImageView-->
-<!--            android:id="@+id/btnRevert"-->
-<!--            android:layout_width="32dp"-->
-<!--            android:layout_height="32dp"-->
-<!--            android:src="@drawable/ic_flip"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            android:layout_marginTop="14dp"-->
-<!--            android:layout_marginEnd="16dp"-->
-<!--            android:elevation="1dp"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/btnSave"-->
-<!--            app:layout_constraintHorizontal_chainStyle="spread" />-->
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:orientation="horizontal"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/imvBack"-->
-<!--            app:layout_constraintEnd_toStartOf="@id/btnSave"-->
-<!--            app:layout_constraintStart_toEndOf="@id/imvBack"-->
-<!--            app:layout_constraintTop_toTopOf="@id/imvBack">-->
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/btnRevert"-->
+        <!--            android:layout_width="32dp"-->
+        <!--            android:layout_height="32dp"-->
+        <!--            android:src="@drawable/ic_flip"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            android:layout_marginTop="14dp"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            android:elevation="1dp"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/btnSave"-->
+        <!--            app:layout_constraintHorizontal_chainStyle="spread" />-->
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:gravity="center"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/imvBack"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/btnSave"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/imvBack"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/imvBack">-->
 
 
-<!--&lt;!&ndash;            <androidx.appcompat.widget.AppCompatImageView&ndash;&gt;-->
-<!--&lt;!&ndash;                android:id="@+id/btnReset"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_width="32dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_height="32dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:elevation="1dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:src="@drawable/ic_reset"&ndash;&gt;-->
-<!--&lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                app:layout_constraintBottom_toBottomOf="parent" />&ndash;&gt;-->
+        <!--&lt;!&ndash;            <androidx.appcompat.widget.AppCompatImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:id="@+id/btnReset"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_width="32dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_height="32dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:elevation="1dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:src="@drawable/ic_reset"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:layout_constraintBottom_toBottomOf="parent" />&ndash;&gt;-->
 
-<!--&lt;!&ndash;            <androidx.appcompat.widget.AppCompatImageView&ndash;&gt;-->
-<!--&lt;!&ndash;                android:id="@+id/btnSee"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_width="32dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_height="32dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:visibility="gone"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:src="@drawable/ic_show"&ndash;&gt;-->
-<!--&lt;!&ndash;                app:layout_constraintStart_toEndOf="@+id/btnReset"&ndash;&gt;-->
-<!--&lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                app:layout_constraintBottom_toBottomOf="parent" />&ndash;&gt;-->
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        <!--&lt;!&ndash;            <androidx.appcompat.widget.AppCompatImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:id="@+id/btnSee"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_width="32dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_height="32dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:visibility="gone"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:src="@drawable/ic_show"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:layout_constraintStart_toEndOf="@+id/btnReset"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                app:layout_constraintBottom_toBottomOf="parent" />&ndash;&gt;-->
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
         <RelativeLayout
             android:id="@+id/rl"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
-            android:visibility="visible"
+            android:layout_marginTop="20dp"
             android:elevation="0dp"
+            android:visibility="visible"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintTop_toBottomOf="@+id/btnSave">
 
@@ -159,34 +161,31 @@
         </RelativeLayout>
 
 
-
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btnDice"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:elevation="1dp"
             android:layout_marginEnd="20dp"
+            android:elevation="1dp"
             android:src="@drawable/imv_random"
             app:layout_constraintBottom_toBottomOf="@id/llColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/llColor" />
 
 
-
         <LinearLayout
-            android:elevation="1dp"
             android:id="@+id/llColor"
             android:layout_width="0dp"
             android:layout_height="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="16dp"
+            android:elevation="1dp"
             android:gravity="start"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/rl"
             app:layout_constraintEnd_toStartOf="@id/btnDice"
             app:layout_constraintStart_toStartOf="parent"
-          >
+            app:layout_constraintTop_toBottomOf="@+id/rl">
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -234,7 +233,7 @@
                 android:id="@+id/rcvPart"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="8dp"
                 android:clipToPadding="false"
                 android:orientation="vertical"
@@ -246,11 +245,19 @@
                 tools:listitem="@layout/item_part" />
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="56.2dp"
+            android:background="@drawable/shadow_top"
+            android:elevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
         <LinearLayout
             android:id="@+id/llNav"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@drawable/bg_nav_custom"
+            android:elevation="3dp"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent">
 
@@ -267,121 +274,89 @@
         </LinearLayout>
 
         <LinearLayout
-            android:elevation="4dp"
-            android:visibility="gone"
             android:id="@+id/llLoading"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="#A0949494"
+            android:elevation="4dp"
             android:gravity="center"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#80545454"
-                android:weightSum="800"
+                android:gravity="center"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:weightSum="800">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_weight="155"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_marginHorizontal="22dp">
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_weight="140">
 
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:src="@drawable/bg_dialog"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
+                        android:src="@drawable/bg_16_white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-                    <FrameLayout
-                        android:id="@+id/titleFame"
-                        android:layout_width="0dp"
-                        android:layout_height="41dp"
-                        android:background="@drawable/bg_title_dialog"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:elevation="1dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-                        <TextView
-                            style="@style/single_marquee"
-                            app:strokeJoinStyle="miter"
-                            android:id="@+id/txtTitle"
-                            android:gravity="center"
-                            android:layout_marginHorizontal="0dp"
-                            android:textSize="18sp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/nunito_bold"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/loading"/>
 
-                    </FrameLayout>
-                    <TextView
-                        android:id="@+id/txtContent"
+                    <LinearLayout
+                        android:id="@+id/frameTxt"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:fontFamily="@font/nunito_regular"
-                        android:gravity="center"
-                        android:text="@string/wait_a_few_second"
-                        android:textSize="16dp"
-                        app:layout_constraintBottom_toTopOf="@+id/btnNo"
+                        android:layout_marginTop="25dp"
+                        android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/titleFame" />
+                        app:layout_constraintTop_toTopOf="parent">
 
-                    <!--                       -->
-                    <!--                        <com.airbnb.lottie.LottieAnimationView-->
-                    <!--                            android:id="@+id/animationView"-->
-                    <!--                            android:layout_width="100dp"-->
-                    <!--                            android:layout_height="100dp"-->
-                    <!--                            android:layout_marginTop="-20dp"-->
-                    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
-                    <!--                            app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                            app:layout_constraintTop_toBottomOf="@+id/txtContent"-->
-                    <!--                            app:lottie_autoPlay="true"-->
-                    <!--                            app:lottie_loop="true"-->
-                    <!--                            app:lottie_rawRes="@raw/json_loading" />-->
+                        <TextView
+                            android:id="@+id/txtTitle"
+                            style="@style/single_marquee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="center"
+                            android:text="@string/loading"
+                            android:textColor="@color/_141414"
+                            android:textSize="18sp"
+                            app:strokeJoinStyle="miter" />
 
-                    <TextView
-                        android:visibility="gone"
-                        android:id="@+id/btnNo"
-                        android:layout_width="0dp"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/bg_8_color"
-                        android:gravity="center"
-                        android:text="@string/no"
-                        android:textColor="@color/app_color"
-                        android:fontFamily="@font/nunito_regular"
+                        <TextView
+                            android:id="@+id/txtContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center"
+                            android:text="@string/wait_a_few_second"
+                            android:textColor="@color/_999999"
+                            android:textSize="14dp" />
+
+                    </LinearLayout>
+
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animationView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintDimensionRatio="1.01:0.36"
-                        app:layout_constraintEnd_toStartOf="@+id/btnYes"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtContent" />
-
-                    <TextView
-                        android:visibility="gone"
-                        android:id="@+id/btnYes"
-                        android:layout_width="0dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/bg_btn_loading_yes"
-                        android:gravity="center"
-                        android:text="@string/tv_yes"
-                        android:textColor="@color/white"
-                        android:layout_marginEnd="20dp"
-                        android:fontFamily="@font/nunito_regular"
-                        app:layout_constraintDimensionRatio="1.01:0.36"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/btnNo"
-                        app:layout_constraintTop_toTopOf="@+id/btnNo" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/frameTxt"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/lottie_loading" />
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -392,6 +367,7 @@
             android:id="@+id/flNativeCollab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:elevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

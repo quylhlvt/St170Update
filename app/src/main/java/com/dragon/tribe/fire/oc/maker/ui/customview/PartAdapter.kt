@@ -37,7 +37,7 @@ class PartAdapter : AbsBaseAdapter<String, ItemPartBinding>(R.layout.item_part, 
         holder: RecyclerView.ViewHolder
     ) {
         binding.apply {
-            materialCard.strokeColor= if (posPath == position) ContextCompat.getColor(binding.root.context,R.color._536585)else ContextCompat.getColor(binding.root.context,R.color._9DD4FF)
+            materialCard.strokeColor= if (posPath == position) ContextCompat.getColor(binding.root.context,R.color.app_color)else ContextCompat.getColor(binding.root.context,R.color.white)
         }
         Glide.with(binding.imv).clear(binding.imv)
         // 🔴 BẮT BUỘC: scaleType cố định

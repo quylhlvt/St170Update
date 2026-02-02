@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp">
+        android:layout_margin="3.5dp"
+       >
 
 
         <FrameLayout
@@ -18,24 +19,23 @@
             android:layout_height="0dp"
             app:cardBackgroundColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="2:3"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
             <!--        imvFocus-->
             <View
+                android:elevation="2dp"
                 android:visibility="gone"
                 android:id="@+id/vFocus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="1.5dp"
                 android:background="@drawable/bg_10_stroke_red" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="3.5dp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
 
                 <!--            imvImage-->
@@ -57,27 +57,11 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
+                        android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
                         android:src="@drawable/ic_add_item" />
 
-                    <!--                tvAddImage-->
-                    <TextView
-                        android:id="@+id/tvAddImage"
-                        style="@style/single_marquee"
-                        app:strokeJoinStyle="miter"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginTop="2dp"
-                        android:gravity="center"
-                        android:text="@string/add_image"
-                        android:fontFamily="@font/roboto_regular"
-                        android:textColor="@color/app_color"
-                        android:textSize="10sp"
-                        tools:ignore="SmallSp"
-                        />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

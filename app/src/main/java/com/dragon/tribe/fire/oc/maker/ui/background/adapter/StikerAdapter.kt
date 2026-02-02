@@ -1,5 +1,6 @@
 package com.dragon.tribe.fire.oc.maker.ui.background.adapter
 
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -16,6 +17,7 @@ class StikerAdapter :
         DiffCallBack()
     ) {
     var onClick: ((String) -> Unit)? = null
+    var posSelect: Int = -1
     override fun bind(
         binding: ItemStikerBgBinding,
         position: Int,
@@ -23,7 +25,17 @@ class StikerAdapter :
         holder: RecyclerView.ViewHolder
     ) {
         binding.imv.onSingleClick {
+            if (posSelect >= 0 && posSelect < currentList.size) {
+                currentList[posSelect].isSelected = false
+            }
+
+            data.isSelected = true
+            posSelect = position
+            notifyDataSetChanged()
             onClick?.invoke(data.path)
+        }
+        binding.apply {
+            material.strokeColor= if (data.isSelected) ContextCompat.getColor(binding.root.context,R.color.app_color)else ContextCompat.getColor(binding.root.context,R.color.white)
         }
         Glide.with(binding.root).load(data.path)
             .override(512, 512)
@@ -37,7 +49,7 @@ class StikerAdapter :
             oldItem: SelectedModel,
             newItem: SelectedModel
         ): Boolean {
-            return oldItem == newItem
+            return oldItem.path == newItem.path
         }
 
         override fun contentsTheSame(

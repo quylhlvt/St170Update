@@ -41,10 +41,10 @@ import com.dragon.tribe.fire.oc.maker.utils.CONST
 import com.dragon.tribe.fire.oc.maker.utils.DataHelper
 import com.dragon.tribe.fire.oc.maker.utils.DataHelper.dp
 import com.dragon.tribe.fire.oc.maker.utils.DataHelper.getData
-import com.dragon.tribe.fire.oc.maker.utils.DataHelper.setMargins
 import com.lvt.ads.util.Admob
 import com.dragon.tribe.fire.oc.maker.R
 import com.dragon.tribe.fire.oc.maker.databinding.ActivityMyCreationBinding
+import com.dragon.tribe.fire.oc.maker.utils.DataHelper.setPaddingOptional
 import com.dragon.tribe.fire.oc.maker.utils.SharedPreferenceUtils
 import com.dragon.tribe.fire.oc.maker.utils.hide
 import com.dragon.tribe.fire.oc.maker.utils.isInternetAvailable
@@ -208,7 +208,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityMyCreationBinding>() 
                     }
 
                     "longclick" -> {
-                        this@MyCreationActivity.binding.rcvAvatar.setMargins(8.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity),50)
+                        this@MyCreationActivity.binding.rcvAvatar.setPaddingOptional(16.dp(this@MyCreationActivity),20.dp(this@MyCreationActivity),16.dp(this@MyCreationActivity),50.dp(this@MyCreationActivity))
                         checkLongClick = true
                         this@MyCreationActivity.checkLongClick = true
 
@@ -281,7 +281,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityMyCreationBinding>() 
                     }
 
                     "longclick" -> {
-                        this@MyCreationActivity.binding.rcvDesign.setMargins(8.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity),50)
+                        this@MyCreationActivity.binding.rcvDesign.setPaddingOptional(16.dp(this@MyCreationActivity),20.dp(this@MyCreationActivity),16.dp(this@MyCreationActivity),50.dp(this@MyCreationActivity))
                         checkLongClick = true
                         this@MyCreationActivity.checkLongClick = true
                         if(arrCheckTick.indexOf(pos)>-1){
@@ -464,8 +464,8 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityMyCreationBinding>() 
     }
     var checkLongClick = false
     fun hideLongClick() {
-        this@MyCreationActivity.binding.rcvAvatar.setMargins(8.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity),0)
-        this@MyCreationActivity.binding.rcvDesign.setMargins(8.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity),0)
+        this@MyCreationActivity.binding.rcvAvatar.setPaddingOptional(16.dp(this@MyCreationActivity),20.dp(this@MyCreationActivity),16.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity))
+        this@MyCreationActivity.binding.rcvDesign.setPaddingOptional(16.dp(this@MyCreationActivity),20.dp(this@MyCreationActivity),16.dp(this@MyCreationActivity),8.dp(this@MyCreationActivity))
         checkLongClick = false
       binding.imvTickAll.setImageResource(R.drawable.imv_tick_all_false)
         binding.imvTickAll.visibility = View.GONE
@@ -763,13 +763,13 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityMyCreationBinding>() 
                 }
             }
 
-            btnAvatar.onSingleClick {
+            btnAvatar2.onSingleClick {
                 if (!checkAvatar) {
                     checkAvatar = true
-                    btnAvatar.setBackgroundResource(R.drawable.bg_btn_my_work)
-                    btnAvatar.setTextColor(ContextCompat.getColor(this@MyCreationActivity,R.color.white))
-                    btnDesign.setTextColor(ContextCompat.getColor(this@MyCreationActivity,R.color.app_color))
-                    btnDesign.setBackgroundResource(R.drawable.bg_btn_my_work_unselect)
+                    btnAvatar.show()
+                    btnDesign.show()
+                    btnAvatar2.hide()
+                    btnDesign2.hide()
                     rcvAvatar.show()
                     rcvDesign.hide()
                     updateLayoutSticker()
@@ -779,10 +779,10 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityMyCreationBinding>() 
             btnDesign.onSingleClick {
                 if (checkAvatar) {
                     checkAvatar = false
-                    btnAvatar.setBackgroundResource(R.drawable.bg_btn_my_work_unselect)
-                    btnDesign.setBackgroundResource(R.drawable.bg_btn_my_work)
-                    btnDesign.setTextColor(  ContextCompat.getColor(this@MyCreationActivity,R.color.white))
-                    btnAvatar.setTextColor(  ContextCompat.getColor(this@MyCreationActivity,R.color.app_color))
+                    btnAvatar2.show()
+                    btnDesign2.show()
+                    btnAvatar.hide()
+                    btnDesign.hide()
                     rcvDesign.show()
                     rcvAvatar.hide()
                     updateLayoutSticker()

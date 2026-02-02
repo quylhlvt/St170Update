@@ -27,10 +27,8 @@ class FontAdapter :
         binding.tv.typeface = ResourcesCompat.getFont(binding.root.context, data.color)
        if(data.isSelected){
            binding.imv.setImageResource(R.drawable.imv_font_true)
-           binding.tv.setTextColor("#01579B".toColorInt())
        }else{
            binding.imv.setImageResource(R.drawable.imv_font_false)
-           binding.tv.setTextColor("#ffffff".toColorInt())
        }
     }
 

@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/img_bg_splash">
+        android:background="@color/app_color4">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imvBack"
@@ -18,26 +18,16 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="50dp"
             android:elevation="1dp"
-            android:src="@drawable/ic_back_app"
+            android:src="@drawable/ic_back2_app"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.dragon.tribe.fire.oc.maker.utils.StrokeAppCompatTextView
-            android:id="@+id/tvTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="100dp"
-            android:ellipsize="marquee"
-            android:textColor="@color/white"
-            android:textSize="26sp"
-            app:strokeWidth="2dp"
-            app:strokeColor="@color/app_color"
-            android:fontFamily="@font/cherry_bomb_one_regular"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imvHome"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:gravity="center"
-            android:marqueeRepeatLimit="3"
-            android:singleLine="true"
-            android:text="@string/successfully"
-
+            android:src="@drawable/imv_home"
             app:layout_constraintBottom_toBottomOf="@id/imvBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,11 +36,11 @@
             />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imvHome"
+            android:id="@+id/imvShare"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/imv_home"
+            android:src="@drawable/imv_share"
             app:layout_constraintBottom_toBottomOf="@id/imvBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/imvBack" />
@@ -67,11 +57,9 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardImv"
-            android:layout_marginVertical="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvContent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginHorizontal="46dp"
+            android:layout_margin="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imvBack"
             android:layout_height="0dp"
@@ -92,13 +80,13 @@
             android:id="@+id/tvContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_bold_italic"
+            android:fontFamily="@font/londrina_solid_regular"
             android:gravity="center"
-            android:layout_marginTop="13dp"
             android:text="@string/image_has_been_saved_successfully"
-            android:textColor="@color/app_color"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/llBottom" />
+            app:layout_constraintTop_toBottomOf="@+id/cardImv" />
 
         <LinearLayout
             android:id="@+id/llBottom"
@@ -110,7 +98,7 @@
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/imvShare">
+            app:layout_constraintTop_toBottomOf="@+id/tvContent">
 
             <LinearLayout
                 android:id="@+id/btnMyWork"
@@ -118,29 +106,29 @@
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
-                android:paddingHorizontal="12dp"
                 android:background="@drawable/bg_btn_share_view"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
 
-<!--                <ImageView-->
-<!--                    android:layout_width="24dp"-->
-<!--                    android:layout_height="24dp"-->
-<!--                    android:src="@drawable/ic_mywork_success" />-->
+                <!--                <ImageView-->
+                <!--                    android:layout_width="24dp"-->
+                <!--                    android:layout_height="24dp"-->
+                <!--                    android:src="@drawable/ic_mywork_success" />-->
 
                 <TextView
                     android:id="@+id/tvMyWork"
+                    style="@style/single_marquee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="8dp"
-                    android:fontFamily="@font/nunito_medium"
-                    android:text="@string/my_creation"
-                    android:textColor="@color/white"
-                    android:singleLine="true"
-                    style="@style/single_marquee"
-                    android:freezesText="true"
                     android:ellipsize="marquee"
+                    android:fontFamily="@font/londrina_solid_regular"
+                    android:freezesText="true"
                     android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="@string/go_to_my_creation"
+                    android:textColor="@color/app_color"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -152,13 +140,13 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_btn_share_view"
                 android:gravity="center"
-                android:paddingHorizontal="12dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
 
-<!--                <ImageView-->
-<!--                    android:layout_width="24dp"-->
-<!--                    android:layout_height="24dp"-->
-<!--                    android:src="@drawable/ic_download_mywork" />-->
+                <!--                <ImageView-->
+                <!--                    android:layout_width="24dp"-->
+                <!--                    android:layout_height="24dp"-->
+                <!--                    android:src="@drawable/ic_download_mywork" />-->
 
                 <TextView
                     android:id="@+id/tvDownload"
@@ -167,30 +155,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="8dp"
                     android:ellipsize="marquee"
-                    android:fontFamily="@font/nunito_medium"
+                    android:fontFamily="@font/londrina_solid_regular"
                     android:marqueeRepeatLimit="3"
                     android:singleLine="true"
                     android:text="@string/download"
-                    android:textColor="@color/white"
+                    android:textColor="@color/app_color"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
-        <TextView
-            android:id="@+id/imvShare"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_weight="1"
-            android:textSize="16dp"
-            android:background="@drawable/bg_share_success"
-            android:fontFamily="@font/nunito_medium"
-            android:gravity="center"
-            android:text="@string/share"
-            android:layout_marginBottom="150dp"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/llBottom"
-            app:layout_constraintStart_toStartOf="@+id/llBottom" />
         <!--    flNativeCollab-->
         <FrameLayout
             android:id="@+id/flNativeCollab"

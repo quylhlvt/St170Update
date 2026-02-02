@@ -21,7 +21,6 @@ class ImageAdapter :
         data: SelectedModel,
         holder: RecyclerView.ViewHolder
     ) {
-        binding.tvAddImage.isSelected = true
         binding.imvImage.onSingleClick {
             onClick?.invoke(position)
         }

@@ -73,21 +73,20 @@ object DataHelper {
     }
     fun Int.dp(context: Context): Int =
         (this * context.resources.displayMetrics.density).roundToInt()
-    fun View.setMargins(
+    fun View.setPaddingOptional(
         left: Int? = null,
         top: Int? = null,
         right: Int? = null,
         bottom: Int? = null
     ) {
-        val params = layoutParams as ViewGroup.MarginLayoutParams
-        params.setMargins(
-            left ?: params.leftMargin,
-            top ?: params.topMargin,
-            right ?: params.rightMargin,
-            bottom ?: params.bottomMargin
+        setPadding(
+            left ?: paddingLeft,
+            top ?: paddingTop,
+            right ?: paddingRight,
+            bottom ?: paddingBottom
         )
-        layoutParams = params
     }
+
     var arrBg = arrayListOf<String>()
     var arrBgText = arrayListOf<String>()
     var arrStiker = arrayListOf<String>()

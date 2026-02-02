@@ -18,12 +18,14 @@ class ChooseColorDialog(context: Activity) : BaseDialog<DialogColorPickerBinding
             colorPickerView.apply {
                 hueSliderView = hueSlider
             }
+            txtColor.post { txtColor.text = String.format("#%06X", 0xFFFFFF and color) }
         }
     }
 
     override fun bindView() {
         binding.apply {
-            colorPickerView.setOnColorChangedListener { color = it }
+            colorPickerView.setOnColorChangedListener { newColor -> color = newColor
+                txtColor.post { txtColor.text = String.format("#%06X", 0xFFFFFF and color) } }
             btnClose.onSingleClick { dismiss() }
             btnDone.onSingleClick {
                 dismiss()

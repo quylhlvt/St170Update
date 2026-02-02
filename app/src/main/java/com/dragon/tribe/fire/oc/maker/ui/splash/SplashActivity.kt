@@ -42,7 +42,7 @@ class SplashActivity : AbsBaseActivity<ActivitySplashBinding>() {
 
     override fun initView() {
         observeDataLoading()
-//        Admob.getInstance().setOpenShowAllAds(false)
+        Admob.getInstance().setOpenShowAllAds(false)
         // Observe data loading TRƯỚC khi load
         Admob.getInstance().setTimeLimitShowAds(30000)
         Admob.getInstance().setTimeCountdownNativeCollab(20000)

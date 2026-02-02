@@ -55,8 +55,9 @@
                     android:id="@+id/btnDelete"
                     android:layout_width="27dp"
                     android:layout_height="27dp"
-                    android:layout_gravity="end"
-                    android:layout_margin="18dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="4dp"
                     android:src="@drawable/imv_delete" />
 
                 <!--        btnSelect-->

@@ -53,16 +53,7 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
     override fun getLayoutId(): Int = R.layout.activity_customize
 
     private val iconToIndexMap = mutableMapOf<String, Int>()
-    private fun applyGradientToLoadingText() {
-        binding.txtContent.post {
-            binding.txtContent.gradientHorizontal(
-                "#01579B".toColorInt(),
-                "#2686C6".toColorInt()
-            )
-        }
-        binding.txtTitle.setTextColor(ContextCompat.getColor(this,R.color.white))
 
-    }
     override fun onRestart() {
         super.onRestart()
         initNativeCollab()
@@ -72,13 +63,7 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
     }
     override fun initView() {
         initNativeCollab()
-        binding.txtContent.post {
-            binding.txtContent.gradientHorizontal(
-                startColor = "#01579B".toColorInt(),
-                endColor   = "#2686C6".toColorInt()
-            )
-        }
-        binding.txtTitle.setTextColor(ContextCompat.getColor(this,R.color.white))
+
         binding.btnSave.isSelected = true
         if (DataHelper.arrBlackCentered.size > 0) {
             binding.apply {
@@ -420,18 +405,18 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
                 }
                 dialog.show()
             }
-//            btnRevert.onSingleClick {
-//                checkRevert = !checkRevert
-//                if (checkRevert) {
-//                    listImg.forEach {
-//                        it.scaleX = 1f
-//                    }
-//                } else {
-//                    listImg.forEach {
-//                        it.scaleX = -1f
-//                    }
-//                }
-//            }
+            btnFlip.onSingleClick {
+                checkRevert = !checkRevert
+                if (checkRevert) {
+                    listImg.forEach {
+                        it.scaleX = 1f
+                    }
+                } else {
+                    listImg.forEach {
+                        it.scaleX = -1f
+                    }
+                }
+            }
             btnDice.onSingleClick {
                 if (!DataHelper.arrBlackCentered[blackCentered].checkDataOnline || isInternetAvailable(
                         this@CustomviewActivity
@@ -516,7 +501,6 @@ class CustomviewActivity : AbsBaseActivity<ActivityCustomizeBinding>() {
                     return@onSingleClick
                 }
                 llLoading.visibility = View.VISIBLE
-                applyGradientToLoadingText()
 //                animationView.visibility = View.VISIBLE
                 val a = DataHelper.arrBlackCentered[blackCentered].avt.split("/")
                 var b = a[a.size - 2]

@@ -1699,7 +1699,7 @@ fun saveBitmap(
             if (!imagesDir.exists()) imagesDir.mkdirs()
             file = File(imagesDir, fileName)
             file.delete()
-            file = File(imagesDir, fileName.replace(".png", "0.png"))
+            file = File(imagesDir, fileName)
         }
         try {
             FileOutputStream(file).use { outputStream ->

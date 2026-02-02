@@ -75,30 +75,14 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
     var path = ""
     val viewModel: BackGroundViewModel by viewModels()
     override fun getLayoutId(): Int = R.layout.activity_background
-    private fun applyGradientToLoadingText() {
-        binding.txtContent.post {
-            binding.txtContent.gradientHorizontal(
-                "#01579B".toColorInt(),
-                "#2686C6".toColorInt()
-            )
-        }
-        binding.txtTitle.setTextColor(ContextCompat.getColor(this,R.color.white))
 
-    }
     private fun initNativeCollab() {
         Admob.getInstance().loadNativeCollapNotBanner(this, getString(R.string.native_cl_bg), binding.flNativeCollab)
     }
 
     override fun initView() {
         initNativeCollab()
-        binding.txtContent.post {
-            binding.txtContent.gradientHorizontal(
-                startColor = "#01579B".toColorInt(),
-                endColor   = "#2686C6".toColorInt()
-            )
 
-        }
-        binding.txtTitle.setTextColor(ContextCompat.getColor(this,R.color.white))
         binding.txtTitle.isSelected = true
         if (DataHelper.arrBlackCentered.isEmpty()) {
 //            GlobalScope.launch(Dispatchers.IO) {
@@ -122,16 +106,19 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
             if (imeVisible) {
                 // 👉 Bàn phím HIỆN
                 setLayoutParam(
-                    binding.llBottom,
+                    binding.ctl,
                     0f,
                     0f,
                     dpToPx(200f, this@BackgroundActivity),
                     0f
                 )
             } else {
+                binding.root.postDelayed({
+                    showSystemUI()
+                }, 50)
                 // 👉 Bàn phím ẨN
                 setLayoutParam(
-                    binding.llBottom,
+                    binding.ctl,
                     0f,
                     0f,
                     dpToPx(0f, this@BackgroundActivity),
@@ -200,7 +187,6 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
 
     private fun showLoading() {
         binding.llLoading.show()
-        applyGradientToLoadingText()
 //        binding.animationView.show()
     }
     private fun clearFocus() {
@@ -209,6 +195,9 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
 
     fun hideKeyboard() {
         hideKeyboard(binding.iclText.edt)
+        binding.root.postDelayed({
+            showSystemUI()
+        }, 100)
     }
 
     private fun addDrawable(
@@ -262,11 +251,17 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
                 btnBgText.setImageResource(R.drawable.imv_bg_text)
                 btnText.setImageResource(R.drawable.imv_text)
                 llBG.show()
+
                 llStiker.hide()
                 llText.hide()
                 llTextBG.hide()
             }
             btnItem.onSingleClick {
+                if (adapterStiker.posSelect >= 0) {
+                    viewModel.stickerList[adapterStiker.posSelect].isSelected = false
+                    adapterStiker.posSelect = -1
+                    adapterStiker.submitList(viewModel.stickerList)
+                }
                 hideKeyboard()
                 btnBg.setImageResource(R.drawable.imv_bg)
                 btnItem.setImageResource(R.drawable.imv_item_true)
@@ -278,6 +273,11 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
                 llTextBG.hide()
             }
             btnBgText.onSingleClick {
+                if (adapterBGText.posSelect1 >= 0) {
+                    viewModel.speechList[adapterBGText.posSelect1].isSelected = false
+                    adapterBGText.posSelect1 = -1
+                    adapterBGText.submitList(viewModel.speechList)
+                }
                 hideKeyboard()
                 btnBg.setImageResource(R.drawable.imv_bg)
                 btnItem.setImageResource(R.drawable.imv_item)
@@ -300,23 +300,21 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
                 llText.show()
             }
             iclBg.apply {
-                btnImage.onSingleClick {
+                chooseImageBG2.onSingleClick {
                     rcvImage.show()
                     rcvColor.hide()
-                    btnImage.setBackgroundResource(R.drawable.bg_custom_choose)
-                    btnImage.setTextColor(ContextCompat.getColor(this@BackgroundActivity, R.color.white))
-
-                    btnColor.setBackgroundResource(R.drawable.bg_custom_unchoose)
-                    btnColor.setTextColor(ContextCompat.getColor(this@BackgroundActivity, R.color.app_color))
+                    chooseImageBG.show()
+                    chooseColorBG.show()
+                    chooseImageBG2.hide()
+                    chooseColorBG2.hide()
                 }
-                btnColor.onSingleClick {
+                chooseColorBG.onSingleClick {
                     rcvColor.show()
                     rcvImage.hide()
-                    btnColor.setBackgroundResource(R.drawable.bg_custom_choose)
-                    btnColor.setTextColor(ContextCompat.getColor(this@BackgroundActivity, R.color.white))
-
-                    btnImage.setBackgroundResource(R.drawable.bg_custom_unchoose)
-                    btnImage.setTextColor(ContextCompat.getColor(this@BackgroundActivity, R.color.app_color))
+                    chooseImageBG.hide()
+                    chooseColorBG.hide()
+                    chooseImageBG2.show()
+                    chooseColorBG2.show()
                 }
             }
             imvBack.onSingleClick {
@@ -364,6 +362,16 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
                                         )
                                         adapterFont.submitList(viewModel.textFontList)
                                     }
+                                    if (adapterBGText.posSelect1 >= 0) {
+                                        viewModel.speechList[adapterBGText.posSelect1].isSelected = false
+                                        adapterBGText.posSelect1 = -1
+                                        adapterBGText.submitList(viewModel.speechList)
+                                    }
+                                    if (adapterStiker.posSelect >= 0) {
+                                        viewModel.stickerList[adapterStiker.posSelect].isSelected = false
+                                        adapterStiker.posSelect = -1
+                                        adapterStiker.submitList(viewModel.stickerList)
+                                    }
                                     dismissLoading()
                                 }
 
@@ -377,7 +385,6 @@ class BackgroundActivity : AbsBaseActivity<ActivityBackgroundBinding>() {
             btnSave.onSingleClick {
                 hideKeyboard()
                 binding.llLoading.show()
-                applyGradientToLoadingText()
 //                binding.animationView.show()
                 clearFocus()
                 lifecycleScope.launch(Dispatchers.IO) {

@@ -16,11 +16,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/nunito_bold"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/londrina_solid_regular"
         android:text="@string/text"
         android:textColor="@color/app_color"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <androidx.appcompat.widget.AppCompatImageView
@@ -28,7 +28,6 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="16dp"
-        android:tint="@color/app_color"
         android:src="@drawable/imv_tick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleBg" />
@@ -48,17 +47,6 @@
             android:paddingBottom="12dp">
 
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="@string/text"
-                android:textColor="@color/app_color"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edt"
@@ -78,7 +66,7 @@
                 android:textColor="@color/black"
                 android:textColorHint="#80868686"
                 android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/tv" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv1"
@@ -86,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/roboto_medium"
+                android:fontFamily="@font/londrina_solid_regular"
                 android:text="@string/font"
                 android:textColor="@color/app_color"
                 android:textSize="16sp"
@@ -97,7 +85,7 @@
                 android:id="@+id/rcvFont"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
                 android:paddingStart="16dp"
@@ -112,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/roboto_medium"
+                android:fontFamily="@font/londrina_solid_regular"
                 android:text="@string/color"
                 android:textColor="@color/app_color"
                 android:textSize="16sp"
@@ -123,7 +111,7 @@
                 android:id="@+id/rcvColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
                 android:paddingStart="16dp"

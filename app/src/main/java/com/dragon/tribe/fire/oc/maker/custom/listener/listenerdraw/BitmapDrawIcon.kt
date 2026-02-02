@@ -64,7 +64,7 @@ class BitmapDrawIcon(drawable: Drawable?, @Gravity gravity: Int) : DrawableDraw(
 //        )
 
 //        paint.shader = gradient
-        paint.color= "#205ABE".toColorInt()
+        paint.color= "#EFC68E".toColorInt()
 //        canvas.drawCircle(x, y, radius, paint)
 
 

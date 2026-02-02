@@ -4,23 +4,29 @@
     <data></data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginBottom="10dp"
         android:layout_height="wrap_content">
+
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
+            android:id="@+id/material"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="10dp"
-            app:strokeColor="@color/app_color3"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:strokeWidth="0dp">
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp">
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerInside" />
+                android:scaleType="fitXY" />
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

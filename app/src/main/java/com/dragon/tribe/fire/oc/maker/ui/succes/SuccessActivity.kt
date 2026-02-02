@@ -48,7 +48,6 @@ class SuccessActivity : AbsBaseActivity<ActivitySuccessBinding>() {
         binding.apply {
             tvDownload.isSelected = true
             tvMyWork.isSelected = true
-            tvTitle.isSelected = true
         }
     }
 

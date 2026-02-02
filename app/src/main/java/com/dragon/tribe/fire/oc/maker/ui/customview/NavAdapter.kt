@@ -37,10 +37,9 @@ class NavAdapter : AbsBaseAdapter<BodyPartModel, ItemNavigationBinding>(R.layout
         holder: RecyclerView.ViewHolder
     ) {
         Glide.with(binding.root).load(data.icon).encodeQuality(90).override(256).diskCacheStrategy(DiskCacheStrategy.RESOURCE).into(binding.imv)
-        if (posNav == position) {
-            binding.bg.setCardBackgroundColor(ContextCompat.getColor(binding.root.context,R.color.FFCC00))
-        } else {
-            binding.bg.setCardBackgroundColor(ContextCompat.getColor(binding.root.context,R.color.white))
+
+        binding.apply {
+            bg.strokeColor= if (posNav == position) ContextCompat.getColor(binding.root.context,R.color.app_color)else ContextCompat.getColor(binding.root.context,R.color.white)
         }
         binding.root.onClickCustom {
             onClick?.invoke(position)

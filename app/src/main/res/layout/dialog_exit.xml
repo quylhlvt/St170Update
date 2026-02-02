@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#80545454"
-        android:weightSum="800"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        android:weightSum="800">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -15,133 +16,124 @@
             android:layout_marginHorizontal="22dp">
 
 
-            <FrameLayout
+            <LinearLayout
                 android:id="@+id/titleFame"
                 android:layout_width="0dp"
-                android:layout_height="41dp"
-                android:background="@drawable/bg_title_dialog"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:elevation="1dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
                 <TextView
-                    style="@style/single_marquee"
-                    app:strokeJoinStyle="miter"
                     android:id="@+id/txtTitle"
-                    android:gravity="center"
-                    android:textSize="18sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/nunito_bold"
+                    style="@style/single_marquee"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/loading"/>
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:text="@string/loading"
+                    android:textColor="@color/_141414"
+                    android:textSize="18sp"
+                    app:strokeJoinStyle="miter" />
 
-            </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TextView
-                android:visibility="gone"
+                    <TextView
+                        android:id="@+id/txtContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:elevation="1dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:text="@string/haven_t_saved_it_yet_do_you_want_to_exit"
+                        android:textColor="@color/_595959"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toTopOf="@+id/btnOk"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleFame" />
+                </FrameLayout>
 
-                android:layout_marginVertical="15dp"
-                android:elevation="1dp"
-                android:id="@+id/txtContent1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:fontFamily="@font/nunito_regular"
-                android:gravity="center"
-                android:text="@string/haven_t_saved_it_yet_do_you_want_to_exit"
-                android:textColor="@color/app_color"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnOk"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleFame"/>
+            </LinearLayout>
+
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:src="@drawable/bg_dialog"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
+                android:src="@drawable/bg_dialog"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
 
-                    android:layout_marginVertical="15dp"
-                    android:id="@+id/txtContent"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    android:fontFamily="@font/nunito_regular"
-                    android:gravity="center"
-                    android:text="@string/haven_t_saved_it_yet_do_you_want_to_exit"
-                    android:textColor="@color/app_color"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toTopOf="@+id/btnNo"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titleFame" />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/btnOk"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:background="@drawable/bg_btn_loading_yes"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="@string/ok"
+                android:layout_marginVertical="20dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1.36:0.44"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleFame" />
 
+            <TextView
+                android:id="@+id/btnYes"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginVertical="24dp"
+                android:background="@drawable/bg_8_color"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/tv_yes"
+                android:textSize="16sp"
+                android:textColor="@color/app_color"
+                app:layout_constraintBottom_toTopOf="@+id/native_ads"
+                app:layout_constraintDimensionRatio="1.36:0.44"
+                app:layout_constraintEnd_toStartOf="@+id/btnNo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleFame" />
 
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/btnOk"
-                    android:layout_width="0dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/bg_btn_loading_yes"
-                    android:fontFamily="@font/roboto_medium"
-                    android:gravity="center"
-                    android:text="@string/ok"
-                    android:layout_marginBottom="26dp"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="1.0:0.36"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtContent1" />
-                <TextView
-                    android:id="@+id/btnNo"
-                    android:layout_width="0dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/bg_8_color"
-                    android:fontFamily="@font/nunito_regular"
-                    android:gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/no"
-                    android:layout_marginBottom="6dp"
-                    android:textColor="@color/app_color"
-                    app:layout_constraintBottom_toTopOf="@+id/native_ads"
-
-                    app:layout_constraintDimensionRatio="1.0:0.36"
-                    app:layout_constraintEnd_toStartOf="@+id/btnYes"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtContent" />
-
-                <TextView
-                    android:id="@+id/btnYes"
-                    android:layout_width="0dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/bg_btn_loading_yes"
-                    android:gravity="center"
-                    android:text="@string/tv_yes"
-                    android:layout_marginEnd="20dp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/nunito_regular"
-                    app:layout_constraintDimensionRatio="1.0:0.36"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/btnNo"
-                    app:layout_constraintTop_toTopOf="@+id/btnNo" />
+            <TextView
+                android:id="@+id/btnNo"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/bg_btn_loading_yes"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/no"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                app:layout_constraintDimensionRatio="1.36:0.44"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnYes"
+                app:layout_constraintTop_toTopOf="@+id/btnYes" />
 
             <FrameLayout
-                android:visibility="gone"
                 android:id="@+id/native_ads"
                 android:layout_width="0dp"
-                android:layout_marginBottom="8dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">

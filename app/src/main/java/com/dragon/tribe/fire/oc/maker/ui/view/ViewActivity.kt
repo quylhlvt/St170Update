@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.dragon.tribe.fire.oc.maker.base.AbsBaseActivity
 import com.dragon.tribe.fire.oc.maker.data.callapi.reponse.DataResponse
 import com.dragon.tribe.fire.oc.maker.data.callapi.reponse.LoadingStatus
@@ -190,7 +191,9 @@ class ViewActivity : AbsBaseActivity<ActivityViewBinding>() {
             binding.imvEdit.hide()
 
         }
-        Glide.with(applicationContext).load(path).into(binding.imv)
+
+        Glide.with(applicationContext).load(path) .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true).into(binding.imv)
 
     }
 
@@ -339,7 +342,15 @@ class ViewActivity : AbsBaseActivity<ActivityViewBinding>() {
             }
         }
     }
-
+    override fun onRestart() {
+        super.onRestart()
+        // Reload ảnh mới khi quay lại
+        Glide.with(applicationContext)
+            .load(path)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true)
+            .into(binding.imv)
+    }
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,

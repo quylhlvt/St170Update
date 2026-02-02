@@ -7,12 +7,14 @@
     <color name="FFCC00">#FFCC00</color>
     <color name="_9DD4FF">#9DD4FF</color>
     <color name="_536585">#536585</color>
-    <color name="ff5db6">#FF5DB6</color>
+    <color name="_999999">#999999</color>
+    <color name="_141414">#141414</color>
     <color name="_0091b2">#0091B2</color>
     <color name="_1f2f4f">#1F2F4F</color>
     <color name="_1D1D1D">#1D1D1D</color>
     <color name="color_app">#205ABE</color>
     <color name="_CCCCCC">#cccccc</color>
+    <color name="_039BE5">#039BE5</color>
     <color name="showdown_olive">#1F000000</color>
 
     <color name="color_1">#E2D2D2</color>
@@ -63,11 +65,15 @@
 
     <color name="stroke_forcus_1">#6ADFFF</color>
     <color name="stroke_forcus_2">#3175EB</color>
-    <color name="color_draw">#F2AAF6</color>
+    <color name="color_draw">#8E7757</color>
     <color name="color_content_dialog">#991F2F4F</color>
     <color name="app_color">#6B1B10</color>
     <color name="app_color2">#EFC68E</color>
     <color name="app_color3">#9F9F9F</color>
+    <color name="app_color4">#E0A764</color>
+    <color name="_808080">#808080</color>
+    <color name="_4CAF50">#4CAF50</color>
+    <color name="_595959">#595959</color>
     <color name="shadown_item_cate">#E8C0F5</color>
     <color name="color_text_intro">#1F2F4F</color>
     <color name="stroke_layercustom_select">#FFCBFF</color>

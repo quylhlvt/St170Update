@@ -18,7 +18,7 @@
             android:layout_marginHorizontal="8dp"
             app:cardElevation="3dp"
             app:strokeWidth="0dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -55,14 +55,16 @@
                     android:id="@+id/btnEdit"
                     android:layout_width="26dp"
                     android:layout_height="26dp"
-                    android:layout_margin="18dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="4dp"
                     android:layout_gravity="end"
                     android:src="@drawable/imv_edit_2" />
                 <ImageView
                     android:id="@+id/btnDelete"
                     android:layout_width="26dp"
                     android:layout_height="26dp"
-                    android:layout_margin="18dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="4dp"
                     android:src="@drawable/imv_delete" />
                 <!--        btnEdit-->
 

@@ -120,12 +120,10 @@ class PermissionActivity : AbsBaseActivity<ActivityPermissionBinding>() {
         }
 
         binding.swiVibrate2.onSingleClick {
-            sharedPreferenceUtils.putBooleanValue(CONST.PERMISON,true)
             handlePermissionRequest(isStorage = true)
         }
 
         binding.swiVibrate4.onSingleClick {
-            sharedPreferenceUtils.putBooleanValue(CONST.PERMISON,true)
             handlePermissionRequest(isStorage = false)
         }
     }
